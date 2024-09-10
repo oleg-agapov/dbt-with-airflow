@@ -1,0 +1,13 @@
+jaffle_shop:
+
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '/workspaces/dbt-with-airflow/jaffle_shop.duckdb'
+      threads: 24
+    
+    astro:
+      type: duckdb
+      path: '~/jaffle_shop.duckdb'
+      threads: 24
