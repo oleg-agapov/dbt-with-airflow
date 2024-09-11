@@ -15,10 +15,6 @@ cosmos_dag = DbtDag(
     execution_config=ExecutionConfig(
         dbt_executable_path="/usr/local/bin/dbt",
     ),
-    # normal dag parameters
-    # schedule_interval="@daily",
-    # start_date=datetime(2024, 9, 1),
-    # catchup=False,
     dag_id="dbt_with_cosmos",
     default_args={"retries": 2},
 )

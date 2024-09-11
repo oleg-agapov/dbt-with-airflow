@@ -1,11 +1,8 @@
-from datetime import datetime
-
 from airflow.decorators import dag
 from airflow.operators.bash_operator import BashOperator
 
 @dag(
     dag_id="dbt_with_bash_operator",
-    start_date=datetime(2024, 8, 15),
     schedule_interval="0 0 * * *",
     catchup=False,
 )
