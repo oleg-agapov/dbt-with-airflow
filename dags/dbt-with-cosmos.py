@@ -1,10 +1,13 @@
 from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
-from cosmos.profiles import PostgresUserPasswordProfileMapping
+from cosmos.profiles import SnowflakeUserPasswordProfileMapping
 
 profile_config = ProfileConfig(
     profile_name="jaffle_shop",
     target_name="astro",
-    profiles_yml_filepath="/usr/local/airflow/dbt_jaffle_shop/profiles.yml",
+    profile_mapping=SnowflakeUserPasswordProfileMapping( 
+        conn_id="snowflake_prod", 
+        profile_args={"schema": "dbt"}, 
+    ),
 )
 
 cosmos_dag = DbtDag(
