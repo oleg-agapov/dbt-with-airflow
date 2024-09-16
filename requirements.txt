@@ -2,3 +2,4 @@
 dbt-core==1.7.9
 dbt-duckdb==1.7.3
 astronomer-cosmos>=1.0.2
+apache-airflow-providers-dbt-cloud[http]
